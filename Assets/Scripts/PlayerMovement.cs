@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioSource jumpSound;
     public Animator anim;
 
+    [SerializeField] AudioSource enemyDieSound;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -54,8 +55,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemyHead"))
         {
+            Debug.Log("OnCollisionEnter");
+            enemyDieSound.Play();
             Destroy(collision.transform.parent.gameObject);
-            Jump();
         }
     }
 
