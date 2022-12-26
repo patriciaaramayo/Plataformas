@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.ShaderData;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HUDGame : MonoBehaviour
