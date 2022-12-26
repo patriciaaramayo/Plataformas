@@ -19,7 +19,7 @@ public class PlayerLife : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("EnemyBody"))
+        if (collision.gameObject.CompareTag("EnemyBody")  || collision.gameObject.CompareTag("CannonBall"))
         {
             
             vidaJugador -= 1f;

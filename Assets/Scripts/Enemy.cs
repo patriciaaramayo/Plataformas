@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void BasicAttack()
     {
-        Debug.Log("BASIC ATTACK");
+        Debug.Log("BasicAttack");
     }
 
 }

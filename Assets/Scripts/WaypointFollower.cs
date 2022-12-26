@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TreeEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WaypointFollower : MonoBehaviour
 {
     [SerializeField] GameObject[] waypoints;
     int currentWaypointIndex = 0;
-
+    public float smooth = 1f;
     [SerializeField] float speed = 1f;
 
     void Update()
@@ -20,6 +21,7 @@ public class WaypointFollower : MonoBehaviour
                 currentWaypointIndex = 0;
             }
         }
+        transform.rotation = Quaternion.Slerp(transform.rotation, waypoints[currentWaypointIndex].transform.rotation, smooth * Time.deltaTime);
         transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, speed * Time.deltaTime);
     }
 }
